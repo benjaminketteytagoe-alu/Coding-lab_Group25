@@ -37,3 +37,21 @@ logfile="$filesource/${lognames[$index]}"
 #checking if the file exists
 if [[ -f $logfile ]]; then
 	echo "Analyzing $logfile ..."
+	#creating analysis file inside reports directory
+	echo "---------- Log Analysis Report ----------" >> "$reports"
+	echo "Date: $(date)" >> "$reports"
+	#counting occurences of each device in the selected log file
+	grep -oE 'HeartRate_Monitor_[A-Z]|Temperature_Monitor_[A-Z]|WaterMeter_[A-Z]' "$logfile" | sort | uniq -c >> "$reports"
+
+	#timestamp of the first and last entry
+	first=$(head -n 1 "$logfile" | awk '{print $1, $2}')
+	last=$(tail -n 1 "$logfile" | awk '{print $1, $2}')
+
+	echo "Timestamp of first entry: $first" >> "$reports"
+	echo "Timestamp of last entry: $last" >> "$reports"
+	echo "----------------------------------------" >> "$reports"
+	echo "Analysis complete. Results saved to $reports"
+else
+	echo " Error ! $logfile does not found"
+fi
+
