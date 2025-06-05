@@ -37,7 +37,7 @@ An interactive shell script to archive a selected log type (heart, temperature, 
 * Replaces active log with a new blank one
 * Error handling for invalid choices or missing files
 
-### Example Usage:
+### Example of the Output from the `archive_logs.sh`:
 
 ```bash
 $ ./archive_logs.sh
@@ -92,10 +92,19 @@ Analyzes selected logs to extract device frequency and timestamps.
 
 ## Team Task Assignment
 
-* **Kelvin**: Setup and tested Python simulators
 * **Kevin**: Built and tested `archive_logs.sh`
-* **Ishami**: Implemented `analyze_logs.sh` with reporting
-* **Benjamin**: Documented the system in `README.md`
-* **Prince**: Did the final repo setup and GitHub management
+* **Prince**: Implemented `analyze_logs.sh` with reporting
+* **Ishami**: Continued and completed the analyze_logs.sh file with reporting
+* **Benjamin**: Documented the system in `README.md`and setup and tested the Python simulators
+* **Kelvin**: Did the final repo setup and GitHub management and the final README.md 
 
+## Learning Objectives from the Project
+* The team ensured all scripts have executable permissions:
+  `chmod +x archive_logs.sh analyze_logs.sh`
+* We tested scripts under real-time logging and were successful.
+* We also Kept readable outputs, well-formatted and commented for easy understanding of the scripts.
+
+---
+### Team Appreciation
+This project was successfully done with strong team effort and commitment from everyone onboard. 
 ---
